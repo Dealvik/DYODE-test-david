@@ -1,38 +1,1405 @@
 .App {
-  text-align: center;
+    /* width: 100vw;
+    height: 100vh;   */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* full window width */
+    text-align: center;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Navbar {
+    background-color: #0F504F;
+    width: 100%;
+    height: 80px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+}
+
+.Navbar .leftSide {
+    flex: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.Navbar .leftSide .links {
+    /* max-height: 80px; */
+    z-index: 10;
+}
+
+.Navbar .leftSide button {
+    display: none;
+    margin-left: 20px;
+    z-index: 1;
+    background: none;
+    border: none;
+	font: inherit;
+	cursor: pointer;
+    transform: scale(1.5, 1.5);
+}
+
+.Navbar .leftSide #hidden {
+    display: flex;
+}
+
+.Navbar .leftSide .links a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+
+.Navbar .leftSide .logo {
+    color: white;
+    font-size: 38px;
+    font-family: 'pacifico';
+    margin-left: 30px;
+}
+
+
+
+.Navbar .rightSide {
+    flex: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15px;
+}
+
+.rightSide svg {
+    transform: scale(0.8, 0.8);
+    margin-right: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+.AlertTopBar {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.AlertTopBar .AlertText {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+.HeroCarousel {
+    display: flex;
+    justify-content: center;
+    /* margin: 0; */
+    /* height: 0; */
+    /* max-width: 500px; */
+    height: 20%;
+}
+ 
+.ShopNewArrivals {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    /* background-color: #EFEFEF; */
+    height: 500px;
+    left: 50px;
+}
+
+.ShopNewArrivals .Title {
+    font-family: 'pacifico';
+    color: #0F504F;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+.ShopNewArrivals p {
+    color: #0F504F;
+    font-family: 'arial';
+    font-size: 17px;
+    margin: 10;
+}
+
+.ShopNewArrivals button {
+    color: white;
+    background-color: black;
+    width: 150px;
+    height: 45px;
+    font-family: 'arial';
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+.App .test {
+    display: flex;
+    flex-direction: column;
+}   
+
+.Gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 20px;
+    margin-left: 10;
+    margin-right: 0;
+}
+
+.Gallery img {
+    width: 100px;
+    height: 80px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.Gallery .Men {
+    width: 170px;
+    height: 210px;
+    margin-left: 10px;
+}
+
+.Gallery .Women {
+    width: 170px;
+    height: 210px;
+    /* margin-right: 5px; */
+}
+
+
+.Gallery .Accessories  {
+    width: 350px;
+    height: 210px;
+    margin-top: 15px;
+}
+
+.Gallery h1 {
+    background-color: #0F504F;
+    text-align: center;
+    margin: 0;
+    margin-top: -39px;
+    position: relative;
+    z-index: 2;
+    font-family: 'pacifico';
+    color: white;
+    font-weight: 100;
+    font-size: 18px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.Gallery .WomenText {
+    /* width: 230px */
+    margin-left: 10px;
+}
+
+.Gallery .MenText {
+    /* width: 230px; */
+    margin-left: 10px;
+}
+
+.NewArrivals {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.NewArrivals h1 {
+    font-family: 'pacifico';
+    font-weight: 100;
+    font-size: 28px;
+    max-height: 400px;
+    color: #0F504F;
+}
+
+.NewArrivals .NewArrivalsSlider {
+    width: auto;
+    max-height: 300px;
+}
+
+.NewArrivals .NewArrivalsSlider .SliderRowDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.NewArrivals .NewArrivalsSlider .SliderRowDiv .product1 {
+    width: 125px;
+    /* padding-left: 10px; */
+    /* padding-right: 5px; */
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    align-items: center;
+}
+
+.NewArrivals .NewArrivalsSlider .SliderRowDiv .product2 {
+    /* width: 175px; */
+    width: 125px;
+    /* padding-left: 10px; */
+    /* padding-right: 5px; */
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    align-items: center;
+}
+
+.NewArrivals .NewArrivalsSlider .SliderRowDiv .product3 {
+    width: 175px;
+    /* padding-left: 5px; */
+    /* padding-right: 10px; */
+
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    align-items: center;
+}
+
+.NewArrivals .NewArrivalsSlider .SliderRowDiv .product4 {
+    width: 175px;
+    /* padding-left: 5px; */
+    /* padding-right: 10px; */
+
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    align-items: center;
+}
+.NewArrivals .NewArrivalsSlider img {
+    width: 100px;
+    height: 200px;
+    /* background-color: #0F504F; */
+}
+
+.NewArrivals .NewArrivalsSlider h1 {
+    font-size: 15px;
+    font-family: 'arial';
+}
+
+.NewArrivals .NewArrivalsSlider h2 {
+    font-size: 12px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.NewArrivals .NewArrivalsSlider p {
+    font-size: 21px;
+    color: #0F504F;
+    font-family: 'pacifico';
+    margin: 0;
+}
+
+.FavoriteTees {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    margin-top: 125px;
+}
+
+.FavoriteTees .Title {
+    font-family: 'pacifico';
+    color: #0F504F;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+.FavoriteTees p {
+    color: #0F504F;
+    font-family: 'arial';
+    font-size: 17px;
+    margin: 10;
+}
+
+.FavoriteTees button {
+    color: white;
+    background-color: black;
+    width: 150px;
+    height: 45px;
+    font-family: 'arial';
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+.FavoriteTees img {
+    width: 100vw;
+    height: 80vh;
+    margin-top: -100px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+footer h1 {
+    color: white;
+    font-family: 'pacifico';
+    font-weight: 100;
+    font-size: 24px;
+}
+
+footer p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+footer .lower-content {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: left;
+    align-items:flex-start;
+}
+
+footer .Signup-content {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    margin-top: 0px;
+}
+
+footer svg {
+    transform: scale(1.2, 1.2);
+    padding-right: 10px;
+    /* margin-left: 35px; */
+}
+
+
+footer button {
+    width: 200px;
+    height: 50px;
+    border: 2px solid white;
+    background-color:#0F504F;
+    margin: 0;
+    margin-top: 55px;
+}
+
+footer button h1 {
+   font-family: Arial, Helvetica, sans-serif;
+   margin: 0;
+   font-size: 17px;
+}
+
+footer .subscribe-content {
+    background-color: #0F504F;
+    margin: 0;
+    /* padding: 10px; */
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .lower-content {
+    background-color: black;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
   }
+  
+.carousel button {
+    /* height: 500px; */
+    opacity: 1;
+    position: relative;
+    z-index: 10;
+}
+
+.carousel.carousel-slider .control-arrow {
+    color: black;
+}
+
+.carousel .control-next.control-arrow:before {
+    border-left: 8px solid #000 !important;
+}
+
+.carousel .control-prev.control-arrow:before {
+    border-right: 8px solid #000 !important;
+}
+
+#hidden {
+    display: none;
+}
+
+
+@media only screen and (max-width: 3000px) {
+.ShopNewArrivals { 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items:flex-start;
+        position: absolute;
+        background-color: transparent;
+        height: 230px;
+        left: 300px;
+        top: 700px;
+    } 
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .Gallery .Men {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 18px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: 10px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    .Gallery .Men {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 38px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin-left: 10px;
+    }
+    
+    .Gallery .MenText {
+        /* margin-left: 40px; */
+    }
+
+    .Gallery .WomenText {
+        /* margin-left: 40px; */
+    }
+
+    .Navbar .leftSide .links {
+        position: relative;
+        left: 500px;
+    }
+
+    .Navbar .leftSide .links a {
+        font-size: 38px;
+        font-weight: 100;
+        margin-left: 60px;
+
+    }
+}
+
+
+@media only screen and (max-width: 2500px) {
+.ShopNewArrivals { 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items:flex-start;
+        position: absolute;
+        background-color: transparent;
+        height: 250px;
+        left: 300px;
+        top: 600px;
+    } 
+
+    .ShopNewArrivals .Title {
+        font-size: 64px;
+    }
+
+    .ShopNewArrivals p {
+        font-size: 26px;
+    }
+
+    .ShopNewArrivals button {
+        width: 200px;
+        height: 60px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .Gallery .Men {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 18px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: 10px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    .Gallery .Men {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 38px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin-left: 10px;
+    }
+    
+    .Gallery .MenText {
+        /* margin-left: 40px; */
+    }
+
+    .Gallery .WomenText {
+        /* margin-left: 40px; */
+    }
+
+    .Navbar .leftSide .links {
+        position: relative;
+        left: 800px;
+    }
+
+    .Navbar .leftSide .links a {
+        font-size: 18px;
+        font-weight: 100;
+        margin-left: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 2000px) {
+.ShopNewArrivals { 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items:flex-start;
+        position: absolute;
+        background-color: transparent;
+        height: 250px;
+        left: 300px;
+        top: 700px;
+    } 
+
+    .ShopNewArrivals .Title {
+        font-size: 64px;
+    }
+
+    .ShopNewArrivals p {
+        font-size: 26px;
+    }
+
+    .ShopNewArrivals button {
+        width: 200px;
+        height: 60px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 50px;
+    }
+
+    .Gallery .Men {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 460px;
+        height: 600px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 38px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        margin-left: 10px;
+    }
+    
+    .Gallery .MenText {
+        /* margin-left: 40px; */
+    }
+
+    .Gallery .WomenText {
+        /* margin-left: 40px; */
+    }
+    .Navbar .leftSide .links {
+        position: relative;
+        left: 600px;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .ShopNewArrivals { 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items:flex-start;
+        position: absolute;
+        background-color: transparent;
+        height: 250px;
+        left: 200px;
+        top: 500px;
+    } 
+
+    .ShopNewArrivals .Title {
+        font-size: 64px;
+    }
+
+    .ShopNewArrivals p {
+        font-size: 26px;
+    }
+
+    .ShopNewArrivals button {
+        width: 200px;
+        height: 50px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 25px;
+    }
+
+    .Gallery .Men {
+        width: 30vw;
+        height: 65vh;
+        margin-left: 15px;
+    }
+
+    .Gallery .Women {
+        width: 30vw;
+        height: 65vh;
+        margin-left: 15px;
+    }
+
+    .Gallery .Accessories {
+        width: 30vw;
+        height: 65vh;
+        margin-left: 15px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 32px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: 15px;
+    }
+
+    .Gallery .MenText {
+        margin-left: 15px;
+    }
+
+    .Gallery .WomenText {
+        margin-left: 15px;
+    }
+
+    .Navbar .leftSide .links {
+        position: relative;
+        left: 350px;
+    }
+
+    .Navbar .leftSide .links a {
+        margin-left: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .ShopNewArrivals { 
+         display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items:flex-start;
+        position: absolute;
+        background-color: transparent;
+        left: 100px; 
+        height: 230px;
+        top: 400px;
+     } 
+
+    .ShopNewArrivals .Title {
+        font-size: 42px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .Gallery .Men {
+        width: 30vw;
+        height: 45vh;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 30vw;
+        height: 45vh;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 30vw;
+        height: 45vh;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 18px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: 10px;
+    }
+    
+    .Gallery .MenText {
+        margin-left: 10px;
+    }
+
+    .Gallery .WomenText {
+        margin-left: 10px;
+    }
+    .Navbar .leftSide .links {
+        position: relative;
+        left: 200px;
+    }
+    .Navbar .leftSide .links a {
+        font-size: 21px;
+        font-weight: 100;
+        margin-left: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    .FavoriteTees img {
+        width: 100vw;
+        height: 45vh;
+        margin-top: -100px;
+    }
+
+    .Navbar .leftSide .links a {
+        font-size: 18px;
+    }
+
+    .Navbar .leftSide .links {
+        position: relative;
+        left: 80px;
+    }
+
+    .ShopNewArrivals {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        align-items:flex-start;
+        /* top: -20px; */
+        position: absolute;
+        background-color: transparent;
+        top: 270px;
+        left: 100px;
+        height: 230px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .Gallery .Men {
+        width: 30vw;
+        height: 40vh;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 30vw;
+        height: 40vh;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 30vw;
+        height: 40vh;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 18px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: 10px;
+    }
+
+    .Navbar .leftSide .links a {
+        font-size: 16px;
+        font-weight: 100;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .Navbar .leftSide .links a {
+        font-size: 14px;
+    }
+
+    .ShopNewArrivals {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        background-color: #EFEFEF;
+        top: 0px;
+        left: 0px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .Gallery .Men {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 170px;
+        height: 210px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .Gallery img {
+        width: 100px;
+        height: 80px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+
+    .Gallery h1 {
+        background-color: #0F504F;
+        text-align: center;
+        margin: 0;
+        margin-top: -39px;
+        position: relative;
+        z-index: 2;
+        font-family: 'pacifico';
+        color: white;
+        font-weight: 100;
+        font-size: 18px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Men {
+        width: 30vw;
+        height: 40vh;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 30vw;
+        height: 40vh;
+        margin-left: 10px;
+    }
+
+    .Gallery .Accessories {
+        width: 30vw;
+        height: 40vh;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+    .Navbar .leftSide button {
+        display: flex;
+    }
+
+    .ShopNewArrivals {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        /* max-width: 400px; */
+        text-align: center;
+        align-items: center;
+        background-color: #EFEFEF;
+    }
+
+    .Navbar .leftSide .links {
+        display: none;
+    }
+
+    .Navbar .leftSide #hidden {
+        position: absolute;
+        left: 0px;
+        top: 135px;
+        height: 230px;
+        width: 100%;
+        background-color: #0F504F;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Navbar .leftSide #hidden a {
+        margin: 10px;
+        font-size: 25px;
+    }
+
+    .rightSide svg {
+        transform: scale(1.3, 1.3);
+        margin-right: 30px;
+    }
+
+    .HeroCarousel img {
+        max-height: 550px;
+        max-width: 650px;
+    }
+
+    .ShopNewArrivals .Title {
+        font-size: 32px;
+    }
+
+    .ShopNewArrivals p {
+        font-size: 18px;
+    }
+    
+    .ShopNewArrivals button {
+        width: 150px;
+        height: 50px;
+    }
+
+    /* Gallery */
+    .Gallery {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .Gallery .Accessories {
+        width: 72vw;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Men {
+        width: 35vw;
+        height: 210px;
+        margin-left: 10px;
+    }
+
+    .Gallery .Women {
+        width: 35vw;
+        height: 210px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .Gallery .Accessories {
+        width: 95vw;
+        height: 210px;
+        margin-left: 0px;
+    }
+
+    .Gallery .Men {
+        width: 95vw;
+        height: 210px;
+        margin-left: 0px;
+    }
+
+    .Gallery .Women {
+        width: 95vw;
+        height: 210px;
+        margin-left: 0px;
+    }
+
+    .Gallery .WomenText {
+        margin-left: 0px;
+    }
+
+    .Gallery .MenText {
+        margin-left: 0px;
+    }
+    .Gallery h1 {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .App {
+        width: 100vw;
+
+        /* width: auto; */
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .App {
+        width: 100vw;
+
+        /* width: auto; */
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .App {
+        width: 100vw;
+    }
 }
